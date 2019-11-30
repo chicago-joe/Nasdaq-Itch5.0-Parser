@@ -10,6 +10,8 @@ import shutil
 from pathlib import Path
 from urllib.request import urlretrieve
 import urllib.parse
+from time import time
+
 FTP_URL = 'ftp://emi.nasdaq.com/ITCH/Nasdaq_ITCH/'
 SOURCE_FILE = '01302019.NASDAQ_ITCH50.gz'
 data_path = Path('C://Users//jloss//PyCharmProjects//NASDAQ-ITCH-5.0-VWAP-PARSER//data')

@@ -32,13 +32,13 @@ from time import time
 
 
 # store data download in a subdirectory and convert the result to hdf format (for faster read/write)
-data_path = Path('C://Users//jloss//PyCharmProjects//NASDAQ-ITCH-5.0-VWAP-PARSER//data')
+data_path = Path('./data')
 itch_store=str(data_path/'itch.h5')
 order_book_store = data_path/'order_book.h5'
 
 # give FTP address, filename, and the date of the file you want to download:
 FTP_URL = 'ftp://emi.nasdaq.com/ITCH/Nasdaq_ITCH/'
-SOURCE_FILE = '01302019.NASDAQ_ITCH50.gz'
+SOURCE_FILE = '10302019.NASDAQ_ITCH50.gz'
 
 # download the data and unzip it
 def may_be_download(url):
@@ -88,7 +88,7 @@ class format_strings:
     }
 
 # the message_types.xlxs contains type specifications as laid out by ITCH documentation:
-message_data = (pd.read_excel('C://Users//jloss//PyCharmProjects//NASDAQ-ITCH-5.0-VWAP-PARSER//src//message_types.xlsx',
+message_data = (pd.read_excel('./data/message_types.xlsx',
                               sheet_name='messages',
                               encoding='latin1').sort_values('id').drop('id', axis=1))
 
